@@ -1,9 +1,9 @@
-defmodule ElixirTest.MixProject do
+defmodule CoinScrape.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_test,
+      app: :coin_scrape,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule ElixirTest.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ElixirTest.Application, []},
+      mod: {CoinScrape.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

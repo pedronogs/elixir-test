@@ -1,5 +1,5 @@
-defmodule ElixirTestWeb.ErrorView do
-  use ElixirTestWeb, :view
+defmodule CoinScrapeWeb.ErrorView do
+  use CoinScrapeWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

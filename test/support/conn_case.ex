@@ -1,4 +1,4 @@
-defmodule ElixirTestWeb.ConnCase do
+defmodule CoinScrapeWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule ElixirTestWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ElixirTestWeb.ConnCase, async: true`, although
+  by setting `use CoinScrapeWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule ElixirTestWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import ElixirTestWeb.ConnCase
+      import CoinScrapeWeb.ConnCase
 
-      alias ElixirTestWeb.Router.Helpers, as: Routes
+      alias CoinScrapeWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint ElixirTestWeb.Endpoint
+      @endpoint CoinScrapeWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirTest.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CoinScrape.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ElixirTest.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CoinScrape.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

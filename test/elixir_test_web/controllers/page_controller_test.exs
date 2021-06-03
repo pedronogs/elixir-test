@@ -1,5 +1,5 @@
-defmodule ElixirTestWeb.PageControllerTest do
-  use ElixirTestWeb.ConnCase
+defmodule CoinScrapeWeb.PageControllerTest do
+  use CoinScrapeWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

@@ -1,5 +1,5 @@
-defmodule ElixirTest.Repo do
+defmodule CoinScrape.Repo do
   use Ecto.Repo,
-    otp_app: :elixir_test,
+    otp_app: :coin_scrape,
     adapter: Ecto.Adapters.Postgres
 end

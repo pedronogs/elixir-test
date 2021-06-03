@@ -1,3 +1,3 @@
-defmodule ElixirTestWeb.PageViewTest do
-  use ElixirTestWeb.ConnCase, async: true
+defmodule CoinScrapeWeb.PageViewTest do
+  use CoinScrapeWeb.ConnCase, async: true
 end

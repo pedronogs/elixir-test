@@ -1,12 +1,12 @@
-defmodule ElixirTestWeb do
+defmodule CoinScrapeWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ElixirTestWeb, :controller
-      use ElixirTestWeb, :view
+      use CoinScrapeWeb, :controller
+      use CoinScrapeWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ElixirTestWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ElixirTestWeb
+      use Phoenix.Controller, namespace: CoinScrapeWeb
 
       import Plug.Conn
-      import ElixirTestWeb.Gettext
-      alias ElixirTestWeb.Router.Helpers, as: Routes
+      import CoinScrapeWeb.Gettext
+      alias CoinScrapeWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/elixir_test_web/templates",
-        namespace: ElixirTestWeb
+        root: "lib/web/templates",
+        namespace: CoinScrapeWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule ElixirTestWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ElixirTestWeb.Gettext
+      import CoinScrapeWeb.Gettext
     end
   end
 
@@ -66,9 +66,9 @@ defmodule ElixirTestWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import ElixirTestWeb.ErrorHelpers
-      import ElixirTestWeb.Gettext
-      alias ElixirTestWeb.Router.Helpers, as: Routes
+      import CoinScrapeWeb.ErrorHelpers
+      import CoinScrapeWeb.Gettext
+      alias CoinScrapeWeb.Router.Helpers, as: Routes
     end
   end
 

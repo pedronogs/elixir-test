@@ -1,8 +1,8 @@
-defmodule ElixirTestWeb.UserSocket do
+defmodule CoinScrapeWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ElixirTestWeb.RoomChannel
+  # channel "room:*", CoinScrapeWeb.RoomChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
@@ -27,7 +27,7 @@ defmodule ElixirTestWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     ElixirTestWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     CoinScrapeWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   @impl true

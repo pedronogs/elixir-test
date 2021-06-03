@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :elixir_test,
-  ecto_repos: [ElixirTest.Repo]
+config :coin_scrape,
+  ecto_repos: [CoinScrape.Repo]
 
 # Configures the endpoint
-config :elixir_test, ElixirTestWeb.Endpoint,
+config :coin_scrape, CoinScrapeWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "RqJ1FnS8eRBly1QtaqprxZKu6D0XUtKd7oJVT5FIjrxqRRl+tiKuVoQvl8rOSAzd",
-  render_errors: [view: ElixirTestWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: ElixirTest.PubSub,
+  render_errors: [view: CoinScrapeWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: CoinScrape.PubSub,
   live_view: [signing_salt: "qHdTLv4+"]
 
 # Configures Elixir's Logger

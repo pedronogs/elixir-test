@@ -1,6 +1,6 @@
-defmodule ElixirTest do
+defmodule CoinScrape do
   @moduledoc """
-  ElixirTest keeps the contexts that define your domain
+  CoinScrape keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

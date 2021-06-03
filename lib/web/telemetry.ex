@@ -1,4 +1,4 @@
-defmodule ElixirTestWeb.Telemetry do
+defmodule CoinScrapeWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule ElixirTestWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("elixir_test.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("elixir_test.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("elixir_test.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("elixir_test.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("elixir_test.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("coin_scrape.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("coin_scrape.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("coin_scrape.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("coin_scrape.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("coin_scrape.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule ElixirTestWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {ElixirTestWeb, :count_users, []}
+      # {CoinScrapeWeb, :count_users, []}
     ]
   end
 end

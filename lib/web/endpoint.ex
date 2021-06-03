@@ -1,5 +1,5 @@
-defmodule ElixirTestWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elixir_test
+defmodule CoinScrapeWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :coin_scrape
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -10,7 +10,7 @@ defmodule ElixirTestWeb.Endpoint do
     signing_salt: "joGbPYkO"
   ]
 
-  socket "/socket", ElixirTestWeb.UserSocket,
+  socket "/socket", CoinScrapeWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -22,7 +22,7 @@ defmodule ElixirTestWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :elixir_test,
+    from: :coin_scrape,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule ElixirTestWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elixir_test
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :coin_scrape
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -50,5 +50,5 @@ defmodule ElixirTestWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ElixirTestWeb.Router
+  plug CoinScrapeWeb.Router
 end

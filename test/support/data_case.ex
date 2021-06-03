@@ -1,4 +1,4 @@
-defmodule ElixirTest.DataCase do
+defmodule CoinScrape.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule ElixirTest.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ElixirTest.DataCase, async: true`, although
+  by setting `use CoinScrape.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule ElixirTest.DataCase do
 
   using do
     quote do
-      alias ElixirTest.Repo
+      alias CoinScrape.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import ElixirTest.DataCase
+      import CoinScrape.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirTest.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CoinScrape.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ElixirTest.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CoinScrape.Repo, {:shared, self()})
     end
 
     :ok

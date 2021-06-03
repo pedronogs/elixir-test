@@ -1,5 +1,5 @@
-defmodule ElixirTestWeb.Router do
-  use ElixirTestWeb, :router
+defmodule CoinScrapeWeb.Router do
+  use CoinScrapeWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,16 @@ defmodule ElixirTestWeb.Router do
     plug :accepts, ["json"]
   end
 
-  # scope "/", ElixirTestWeb do
+  # scope "/", CoinScrapeWeb do
   #   pipe_through :browser
 
   #   get "/", PageController, :index
   # end
 
-  scope "/api", ElixirTestWeb do
+  scope "/api", CoinScrapeWeb do
     pipe_through :api
+
+    resources "/", ScrapingController, only: [:index, :create, :update, :delete]
   end
 
   # Enables LiveDashboard only for development
@@ -35,7 +37,7 @@ defmodule ElixirTestWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: ElixirTestWeb.Telemetry
+      live_dashboard "/dashboard", metrics: CoinScrapeWeb.Telemetry
     end
   end
 end
